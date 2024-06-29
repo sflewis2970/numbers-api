@@ -18,6 +18,7 @@ func main() {
 
 	// Create controller
 	controller := controllers.NewController()
+	controller.SetupRoutes()
 
 	// setup Cors
 	log.Print("Setting up CORS...")

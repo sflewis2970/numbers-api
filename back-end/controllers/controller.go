@@ -16,7 +16,7 @@ type Controller struct {
 // Package controllers object
 var controller *Controller
 
-func (c *Controller) setupRoutes() {
+func (c *Controller) SetupRoutes() {
 	// Display log message
 	log.Print("Setting up service routes")
 
@@ -41,12 +41,11 @@ func NewController() *Controller {
 	log.Print("Creating controllers object...")
 	controller = new(Controller)
 
-	// Numbers handler
-	controller.NumbersHandler = handlers.NewNumbersHandler()
-
 	// Set controllers routes
 	controller.Router = mux.NewRouter()
-	controller.setupRoutes()
+
+	// Numbers handler
+	controller.NumbersHandler = handlers.NewNumbersHandler()
 
 	return controller
 }
